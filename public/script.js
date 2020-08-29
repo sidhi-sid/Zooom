@@ -22,8 +22,7 @@ navigator.mediaDevices.getUserMedia({
         console.log("call answered");
         const video=document.createElement('video');
         call.on('stream',myVideoStream=>{
-            addVideoStream(video,myVideoStream);
-            
+            addVideoStream(video,myVideoStream); 
         })
     })
     

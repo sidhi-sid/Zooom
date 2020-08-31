@@ -73,6 +73,7 @@ video{
 }
 .main__chat__window{
     flex-grow: 1;
+    overflow-y:scroll;
 }
 .main__message__container{
     padding: 22px 12px;

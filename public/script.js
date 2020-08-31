@@ -44,6 +44,7 @@ navigator.mediaDevices
         console.log(message);
       $(".messages").append(`<li class="message"><b>user</b><br>${message}</li>`);
     });
+    
   });
 peer.on("open", (id) => {
   socket.emit("join-room", Room_Id, id);
@@ -65,3 +66,27 @@ const addVideoStream = (video, stream) => {
   });
   videoGrid.append(video);
 };
+
+const scrollToBottom=()=>{
+    let d=$('.main__chat__window');
+    d.scrollTop(d.prop("scrollHeight"));
+}
+
+const muteUnmute=()=>{
+    const enabled=myVideoStream.getAudioTracks()[0].enabled;
+    if(enabled){
+        myVideoStream.getAudioTracks()[0].enabled=false;
+        setUnmuteButton();
+    }else{
+        setMuteButton();
+        myVideoStream.getAudioTracks()[0].enabled=true;
+    }
+}
+
+const setMuteButton=()=>{
+    const html=`
+    <i class="fas fa-microphone"></i>
+    <span>Mute</span>
+    `
+    document.querySelector('.main__mute__button').innerHTML=html;
+}

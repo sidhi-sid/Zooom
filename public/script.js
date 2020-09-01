@@ -126,4 +126,4 @@ const setStopVideo=()=>{
   `
   document.querySelector('.main__video__button').innerHTML=html;
 
-}
+};

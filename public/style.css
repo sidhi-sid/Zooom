@@ -89,6 +89,6 @@ video{
     color:white;
     list-style: none;
 }
-.unmute{
+.unmute,.stop{
     color:red;
 }

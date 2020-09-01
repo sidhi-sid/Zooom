@@ -13,7 +13,7 @@ var peer = new Peer(undefined, {
 navigator.mediaDevices
   .getUserMedia({
     video: true,
-    audio: false,
+    audio: true,
   })
   .then((stream) => {
     myVideoStream = stream;
@@ -89,4 +89,13 @@ const setMuteButton=()=>{
     <span>Mute</span>
     `
     document.querySelector('.main__mute__button').innerHTML=html;
+}
+
+const setUnmuteButton=()=>{
+    const html=`
+    <i class="unmute fas fa-microphone-slash"></i>
+    <span>Unmute</span>
+    `
+    document.querySelector('.main__mute__button').innerHTML=html;
+
 }
